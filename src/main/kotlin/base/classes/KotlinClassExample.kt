@@ -1,4 +1,6 @@
+@file:JvmName("ForUseFromJava") // Name for use from Java classes.
 package base.classes
+
 
 class KotlinClassExample {
 
@@ -10,6 +12,7 @@ class KotlinClassExample {
 
 }
 
-fun main() {
+// Kotlin static functions.
+fun printTitle() {
     println(KotlinClassExample().getTitle())
 }

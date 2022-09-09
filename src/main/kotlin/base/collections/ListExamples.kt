@@ -10,4 +10,9 @@ fun main() {
     mutableList.add("Four")
     for (item: String in mutableList) println(item)
 
+    //To String.
+    println("\nCollection to String:")
+    println("Default: $readOnlyList")
+    val output = readOnlyList.joinToString(separator = ";", prefix = "{", postfix = "}")
+    println("Custom: $output")
 }
