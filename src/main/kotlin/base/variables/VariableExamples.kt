@@ -14,4 +14,9 @@ fun main() {
     a = b
     println(a)
 
+    // multiple
+    val (s1, s2) = readln().split(" ")
+    println(s1)
+    println(s2)
+
 }

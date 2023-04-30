@@ -60,6 +60,10 @@ class LoopExamples {
         for (ch in 'a'..'d') println(ch)
     }
 
+}
+
+class RepeatExamples {
+
     /**
      * Loop with standard function repeat(times: Int, action: (Int) -> Unit).
      */
@@ -67,10 +71,20 @@ class LoopExamples {
         repeat(times) { println(string) }
     }
 
+    /**
+     * Kotlin has the opportunity to control the current iteration with the `it` name:
+     */
+    fun repeatIt() {
+        repeat(5) {
+            println(it)
+        }
+    }
+
 }
 
 fun main() {
     val loopExamples = LoopExamples()
+    val repeatExamples = RepeatExamples()
 
     println("\nLooping in array:")
     loopExamples.forLoop(arrayOf(1, 2, 3))
@@ -97,6 +111,9 @@ fun main() {
     loopExamples.charsIterate()
 
     println("\nRepeat function:")
-    loopExamples.repeatLoop("#", 5)
+    repeatExamples.repeatLoop("#", 5)
+
+    println("\nRepeat function with iteration control:")
+    repeatExamples.repeatIt()
 }
 

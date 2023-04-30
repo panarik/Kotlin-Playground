@@ -1,13 +1,5 @@
 package base.conditions
 
-class IfExample {
-
-    /**
-     * Function with 'If' return statement.
-     */
-    fun max(a: Int, b: Int): Int = if (a > b) a else b
-
-}
 
 fun main() {
 
@@ -17,7 +9,12 @@ fun main() {
     println(result)
 
     // 'If' with return statement
-    IfExample().max(1, 2)
+    max(1, 2)
 }
+
+/**
+ * Function with 'If' return statement.
+ */
+fun max(a: Int, b: Int): Int = if (a > b) a else b
 
 
