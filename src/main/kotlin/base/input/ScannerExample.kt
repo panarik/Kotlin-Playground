@@ -3,9 +3,9 @@ package base.input
 import java.util.*
 
 fun main() {
-//    consoleInput()
+    consoleInput()
     lineScanner()
-//    lineScannerDelimiter()
+    lineScannerDelimiter()
 }
 
 fun consoleInput() {
@@ -22,6 +22,10 @@ fun consoleInput() {
     val int1 = scanner.nextInt()
     val int2 = scanner.nextInt()
     println("$int1\n$int2")
+}
+
+fun whileConsoleInput() {
+    val scanner: Scanner = Scanner(System.`in`)
 }
 
 fun lineScanner() {

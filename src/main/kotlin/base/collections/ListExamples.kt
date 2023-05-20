@@ -1,6 +1,11 @@
 package base.collections
 
 fun main() {
+    buildList()
+    convertToString()
+}
+
+fun buildList() {
 
     // Read only list.
     val readOnlyList = listOf("One", "Two", "Three")
@@ -10,9 +15,15 @@ fun main() {
     mutableList.add("Four")
     for (item: String in mutableList) println(item)
 
-    //To String.
+    // List builder
+    val list: List<Int> = buildList { for (i in 0..10) add(i) }
+    println("Created with builder: $list")
+}
+
+fun convertToString() {
     println("\nCollection to String:")
-    println("Default: $readOnlyList")
-    val output = readOnlyList.joinToString(separator = ";", prefix = "{", postfix = "}")
+    val list = listOf("One", "Two", "Three")
+    println("Default: $list")
+    val output = list.joinToString(separator = ";", prefix = "{", postfix = "}")
     println("Custom: $output")
 }
