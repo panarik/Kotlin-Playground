@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.10")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.test {
@@ -21,4 +22,9 @@ tasks.test {
 
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "15"
+}
+kotlin {
+    jvmToolchain {
+        this.languageVersion.set(JavaLanguageVersion.of(11))
+    }
 }
