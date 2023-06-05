@@ -1,4 +1,4 @@
-package base.input
+package base.resourses.input
 
 import java.util.*
 

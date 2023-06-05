@@ -33,7 +33,12 @@ fun buildList() {
 
 fun workWithList() {
     val numbers = listOf(1, 5, 10, -5, 100, 0)
+
+    // Filter.
     println("Filtered list: ${numbers.filter { it > 0 }}")
+
+    // Contains.
+    println(1 in numbers) // true.
 }
 
 fun convertToString() {
