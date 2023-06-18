@@ -10,6 +10,11 @@ fun main() {
     grbForegroundBackgroundColor(
         "Hello!", f = RGB(255, 255, 0), b = RGB(255, 0, 0)
     )
+
+    // Combined
+    println("\u001B[30mA\u001B[31mB\u001B[32mC\u001B[0m")
+    println("\u001B[48;5;10mA\u001B[48;5;11mB\u001B[48;5;12mC\u001B[0m")
+
 }
 
 private fun foregroundColors16bit() {

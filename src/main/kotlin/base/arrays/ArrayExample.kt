@@ -3,6 +3,7 @@ package base.arrays
 fun main() {
 
     createArrays()
+    useArrays1()
     sortArrays()
     toString()
 }
@@ -27,6 +28,18 @@ fun createArrays() {
 
     val array: Array<Int> = "1 2 3 4 5".split(" ").map { it.toInt() }.toTypedArray()
     println("Create from string: ${array.contentToString()}")
+}
+
+fun useArrays1() {
+    println("\nUse arrays.")
+    val array = Array(5) { Array(5) { 0 } }
+    for (i in array.indices) println("$i: ${array[i].joinToString(" ")}")
+    array[0][1] = 1
+    for (i in array.indices) println("$i: ${array[i].joinToString(" ")}")
+}
+
+fun useArrays2() {
+
 }
 
 fun sortArrays() {
