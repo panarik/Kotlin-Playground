@@ -21,6 +21,8 @@ fun buildList() {
     val list: List<Int> = buildList { for (i in 0..10) add(i) }
     println("Created with builder: $list")
 
+
+
     // linked list
     val linked: LinkedList<Int> = LinkedList()
     linked.add(0)

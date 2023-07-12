@@ -10,6 +10,8 @@ fun main() {
 
     // 'If' with return statement
     max(1, 2)
+
+    //
 }
 
 /**
