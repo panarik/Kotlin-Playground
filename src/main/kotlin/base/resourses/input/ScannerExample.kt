@@ -3,9 +3,10 @@ package base.resourses.input
 import java.util.*
 
 fun main() {
-    consoleInput()
-    lineScanner()
-    lineScannerDelimiter()
+//    consoleInput()
+    whileInputNotEmpty()
+//    lineScanner()
+//    lineScannerDelimiter()
 }
 
 fun consoleInput() {
@@ -24,8 +25,14 @@ fun consoleInput() {
     println("$int1\n$int2")
 }
 
-fun whileConsoleInput() {
-    val scanner: Scanner = Scanner(System.`in`)
+private fun whileInputNotEmpty() {
+    val scanner = Scanner(System.`in`)
+    println("Read console and caught empty inputs or spaces.")
+    while (scanner.hasNextLine()) {
+        val line = scanner.nextLine()
+        if (line.isEmpty() || Regex("\\s+").matches(line)) println("empty input")
+        else println(line)
+    }
 }
 
 fun lineScanner() {

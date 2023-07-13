@@ -10,9 +10,11 @@ fun main() {
 //    writeFile()
 //    fileMethods()
 //    createFiles()
-    directoryMethods()
+//    directoryMethods()
 //    copyFiles()
 //    copyDirectories()
+
+    println(findEmptyDirs("src/main/resources/basedir"))
 }
 
 fun readFile() {
@@ -85,6 +87,13 @@ private fun copyFiles() {
 private fun copyDirectories() {
     val dirOne = File("src/main/resources/outDir")
     dirOne.copyRecursively(File("src/main/resources/copiedDir"), overwrite = true)
+}
+
+private fun findEmptyDirs(path:String):List<String> {
+    val emptyDirs = mutableListOf<String>()
+    val dir = File(path)
+    dir.walkTopDown().forEach { if(it.isDirectory && it.listFiles().size==0) emptyDirs.add(it.name) }
+    return emptyDirs
 }
 
 
