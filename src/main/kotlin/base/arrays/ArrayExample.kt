@@ -17,6 +17,9 @@ fun createArrays() {
     val arrayNulls = arrayOfNulls<Int>(10)
     println("Create empty array with size: ${arrayNulls.contentToString()}")
 
+    val arrayOf = arrayOf("one", "two", "three", "four")
+    println(arrayOf.joinToString(", "))
+
     val arrayConstructor = Array(10) { i -> i + 1 }
     println("Create by constructor: ${arrayConstructor.contentToString()}")
 
