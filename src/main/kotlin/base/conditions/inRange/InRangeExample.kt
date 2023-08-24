@@ -43,10 +43,12 @@ class InRangeExample {
      * Define String belongs to range from "ab" at "az".
      * @param string Symbol for checking.
      */
-    fun stringCondition(string: String, from:String, to:String): Boolean {
+    fun stringCondition(string: String, from: String, to: String): Boolean {
         val stringRange: ClosedRange<String> = from..to
         return string in stringRange // string in "ab".."az"
     }
+
+    fun randomFromRange(range: IntRange): Int = range.random()
 
 }
 
@@ -62,5 +64,14 @@ fun main() {
     println("Char ';'. ${obj.whenCondition(';')}")
     println("String 'as' belongs to range from 'ab' at 'az': ${obj.stringCondition("as", "ab", "az")}")
     println("String 'a2' belongs to range from 'ab' at 'az': ${obj.stringCondition("a2", "ab", "az")}")
-    println("String 'Kotlin' belongs to range from 'Java' at 'Scala': ${obj.stringCondition("Kotlin", "Java", "Scala")}")
+    println(
+        "String 'Kotlin' belongs to range from 'Java' at 'Scala': ${
+            obj.stringCondition(
+                "Kotlin",
+                "Java",
+                "Scala"
+            )
+        }"
+    )
+    println("Get random from 1..6 range: ${obj.randomFromRange(1..6)}")
 }

@@ -52,6 +52,38 @@ class ConstructorProperties(name: String, age: Int) {
         }
 }
 
+class SecondaryConstructor {
+
+    private var number: Int
+    private var default = 0
+
+    init {
+        println("Object is created. Default area is $default")
+    }
+
+    constructor(number: Int) {
+        this.number = number
+        println("Number is set to $number. Default is $default")
+    }
+
+    constructor(number: Int, default: Int) {
+        this.number = number
+        this.default = default
+        println("Number is set to $number. Default is $default")
+    }
+
+}
+
+class Delegation(val a:Int, val b:Int) {
+
+    private var area = a * b
+
+    constructor(a:Int, b:Int, border:Int): this(a, b) {
+        this.area += border
+    }
+
+}
+
 fun main() {
     val example = KotlinClassExample()
     println(example.third)
@@ -64,4 +96,10 @@ fun main() {
     println(example.age)
     val example2 = ConstructorProperties("Default Name", 18)
     example2.fullName = "New name"
+
+    val number = 5
+    val secodrary1 = SecondaryConstructor(number = number)
+    val secodrary2 = SecondaryConstructor(5, 5)
+
+    val delegation = Delegation(5,5, 10)
 }
