@@ -30,6 +30,8 @@ class FunctionExample {
     @JvmOverloads
     fun add(a: Int = 0, b: Int = 0, c: Int = 0) = a + b + c
 
+
+
 }
 
 
@@ -51,23 +53,6 @@ fun main(args: Array<String>) {
     functionExample.add(b = 1, c = 1)
     functionExample.add(a = 1, c = 1)
     functionExample.add(a = 1, b = 1, c = 1)
-
-    objectReferenceEx()
-}
-
-fun objectReferenceEx() {
-
-    /**
-     * variable with function reference.
-     */
-    val m = ::sum
-
-    /**
-     * Variable with explicitly function return value.
-     */
-    var sumFunction: (Int, Int) -> Int = ::sum
-    println("Function from variable $sumFunction has result ${sumFunction(2, 2)}")
-
 }
 
 fun sum(a: Int, b: Int): Int = a + b
@@ -91,27 +76,8 @@ class A {
 
 class ReturnsFunction {
 
-    /**
-     * object with reference to getScoringFunction.
-     */
-    val function = getScoringFunction(true)
 
-    /**
-     * value with function result.
-     */
-    val result = function(5.0)
 
-    /**
-     * Function that returns another function.
-     */
-    private fun getScoringFunction(isCheater: Boolean): (Double) -> Double {
-        if (isCheater) return ::getGradeWithPenalty
-        else return ::getRealGrade
-    }
-
-    private fun getRealGrade(x: Double): Double = x
-
-    private fun getGradeWithPenalty(x: Double) = x - 1
 }
 
 class FunctionParameters {
