@@ -23,8 +23,9 @@ tasks.test {
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "15"
 }
+
 kotlin {
     jvmToolchain {
-        this.languageVersion.set(JavaLanguageVersion.of(11))
+        this.languageVersion.set(JavaLanguageVersion.of(15))
     }
 }
