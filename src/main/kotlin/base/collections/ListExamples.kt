@@ -5,6 +5,7 @@ import java.util.LinkedList
 fun main() {
     buildList()
     convertToString()
+    workWithList()
 }
 
 fun buildList() {
@@ -21,8 +22,6 @@ fun buildList() {
     val list: List<Int> = buildList { for (i in 0..10) add(i) }
     println("Created with builder: $list")
 
-
-
     // linked list
     val linked: LinkedList<Int> = LinkedList()
     linked.add(0)
@@ -35,12 +34,18 @@ fun buildList() {
 
 fun workWithList() {
     val numbers = listOf(1, 5, 10, -5, 100, 0)
+    val words = listOf("abc","bcd","aaaa","cbc")
 
     // Filter.
     println("Filtered list: ${numbers.filter { it > 0 }}")
 
     // Contains.
     println(1 in numbers) // true.
+
+    // mapTo
+    println(words.map{it.length})
+    println(words.mapIndexed{index, s -> s+index})
+    println(words.mapIndexedNotNull{index, s -> if (s.contains('a')) index else null})
 }
 
 fun convertToString() {
